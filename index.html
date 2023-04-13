@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews Feedback</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    
+    <!-- navbar -->
+  <nav id="navbar">
+    <div class="logo-container">
+       <img  class="logo-img" src="./images/logo.jpeg" alt="">
+       
+    </div>
+    <ul> 
+      <li><a href="#tip">Tip Calc</a></li> 
+      <li><a href="#review">Reviews</a></li> 
+      <li><a href="#make">Make Review</a></li> 
+      <li><a href="#reservation">Reservation</a></li> 
+      <!-- <li><a href="#">Link 5</a></li>  -->
+     </ul> 
+    <ul>
+         <li class="open-form"><a href="#">sign up|login</a></li>
+ 
+    </ul>
+    </nav> 
+    <!-- end of navbar -->
+    <!-- sign and login -->
+    <div class="account">
+      <i class="fa fa-times close-form"></i>
+    <div class="login-wrap">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+          <form class="sign-in-htm">
+            <div class="group">
+              <label for="user" class="label">Username</label>
+              <input  id="user" type="text" class="input">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Password</label>
+              <input id="pass" type="password" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <input id="check" type="checkbox" class="check" checked>
+              <label for="check"><span class="icon"></span> Keep me Signed in</label>
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Sign In">
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <a href="#forgot">Forgot Password?</a>
+            </div>
+          </form>
+          <form class="sign-up-htm">
+            <div class="group">
+              <label for="user" class="label">Username</label>
+              <input id="user" type="text" class="input">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Password</label>
+              <input id="pass" type="password" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Repeat Password</label>
+              <input id="pass" type="password" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Email Address</label>
+              <input id="pass" type="text" class="input">
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Sign Up">
+            </div>
+            <div class="hr"></div>
+            <div class="foot-lnk">
+              <label for="tab-1">Already Member?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <!-- end of sign and login -->
+<!-- tip calc  -->
+<main id="tip">
+  <div class="splitter-body">
+    <form class="splitter-input">
+      <div class="input-box">
+        <label for="bill">Bill</label>
+        <span class="error" id="billError">Can't be zero</span>
+        <div class="input-enter">
+          <img src="./assets/icons/icon-dollar.svg" alt="bill-icon" />
+          <input type="number" id="bill" placeholder="0" min="0" />
+        </div>
+      </div>
+      <div class="input-box">
+        <h2>Select Tip %</h2> 
+        <div class="input-tip">
+          <div class="tip-enter">
+            <input type="radio" name="tip" id="5" value="0.05" />
+            <label for="5">5%</label>
+          </div>
+          <div class="tip-enter">
+            <input type="radio" name="tip" id="10" value="0.10" />
+            <label for="10">10%</label>
+          </div>
+          <div class="tip-enter">
+            <input type="radio" name="tip" id="15" value="0.15" />
+            <label for="15">15%</label>
+          </div>
+          <div class="tip-enter">
+            <input type="radio" name="tip" id="25" value="0.25" />
+            <label for="25">25%</label>
+          </div>
+          <div class="tip-enter">
+            <input type="radio" name="tip" id="50" value="0.50" />
+            <label for="50">50%</label>
+          </div>
+          <div class="tip-enter" id="tip-custom">
+            <input
+              type="number"
+              name="tip"
+              id="custom"
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="input-box">
+        <label for="people">Number of People</label>
+        <span class="error" id="peopleError">Can't be zero</span>
+        <div class="input-enter">
+          <img src="./assets/icons/icon-person.svg" alt="bill-icon" />
+          <input type="number" id="people" placeholder="0" min="0"/>
+        </div>
+      </div>
+    </form>
+    <div class="splitter-output">
+      <div class="output-box">
+        <div class="output-text">
+          <h1>Tip Amount</h1>
+          <span>/ person</span>
+        </div>
+        <div class="output-result">
+          <img src="./assets/icons/icon-dollar.svg" alt="bill-icon" />
+          <h1 id="tipAmount">0.00</h1>
+        </div>
+      </div>
+      <div class="output-box">
+        <div class="output-text">
+          <h1>Total</h1>
+          <span>/ person</span>
+        </div>
+        <div class="output-result">
+          <img src="./assets/icons/icon-dollar.svg" alt="bill-icon" />
+          <h1 id="total">0.00</h1>
+        </div>
+      </div>
+      <button id="reset">RESET</button>
+    </div>
+  </div>
+</main>
+<!-- end of tip calc -->
+<!-- make review -->
+<section id="make">
+  
+   <div class="appealing">
+    <h1>Make us smile -></h1>
+    <img src="./images/user.jpg" alt="user">
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error inventore quasi qui veniam saepe, magnam molestiae repellendus, harum adipisci debitis accusamus quod, at eaque excepturi. Nihil sed tempore quasi aspernatur.</p> -->
+   </div>
+   <form a class="make-review">
+    <h1>Give a Feedback</h1>
+     <textarea name="review" cols="30" rows="10" placeholder="your review"></textarea>
+     <div class="rating">
+      <input id="star1" name="star" value="1" class="radio-btn hide" />
+      <label for="star1" class="rate">☆</label>
+      <input id="star2" name="star" value="2" class="radio-btn hide" />
+      <label for="star2"  class="rate" >☆</label>
+      <input id="star3" name="star" value="3" class="radio-btn hide" />
+      <label for="star3"  class="rate" >☆</label>
+      <input id="star4" name="star" value="4" class="radio-btn hide" />
+      <label for="star4"  class="rate" >☆</label>
+      <input id="star5" name="star" value="5" class="radio-btn hide" />
+      <label for="star5"  class="rate">☆</label>
+      
+   </div>
+   <button class="btn">submit</button>
+   </form>
+  
+
+</section>
+<!-- end of make review -->
+    <!-- review section -->
+    <section class="review" id="review">
+      <h1>customers <span>reviews</span></h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="images/pic1.png" alt="iamges" />
+          <h3>Jane Doe</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>amazing,the food is very taste and it is good as advertised</p>
+        </div>
+        <div class="box">
+          <img src="images/pic2.png" alt="iamges" />
+          <h3>Robertto Marcus</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>One word to describe the menu...Amazing</p>
+        </div>
+        <div class="box">
+          <img src="images/pic3.png" alt="iamges" />
+          <h3>Amy Rodriguez</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>i would not mind coming again.Simply loved the food</p>
+        </div>
+      </div>
+    </section>
+    <!-- reservation-->
+    <section class="reservation" id="reservation">
+      <h1 class="heading"><span>Reserve </span> now</h1>
+      <div class="row">
+        <div class="image">
+          <img src="images/order-img.jpg" alt="image" />
+        </div>
+        <form>
+          <div class="inputBox">
+            <input type="text" placeholder="FullName" />
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder="number of tables" />
+            <input type="text" placeholder="phone" />
+          </div>
+          <textarea cols="20" rows="5" placeholder="Message"></textarea>
+          <button class="btn">reservation</button>
+        </form>
+      </div>
+  
+    </section>
+    <!-- footer -->
+    <footer class="footer-section">
+      <div class="footer-content">
+                          <div class="locate">
+                              <h1>Find us</h1>
+                              <span>Tumidajskiego 20/6</span>
+                          </div>
+            
+                          <div class="locate">
+                              <h1>Call us</h1>
+                              <span>+ 48 723 708 283</span>
+                          </div>
+                          <div class="locate">
+                              <h1>Mail us</h1>
+                              <span>mail@info.com</span>
+                          </div>
+              </div>
+          <div class="footer-content">
+    
+                          <div class="footer-social-icon">
+                              <h1>Follow us</h1>
+                              <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                              <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                              <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                          </div>
+                      </div>
+  
+                
+                  <div class="footer-content">
+                              <h1>Subscribe</h1>
+                          <div class="footer-text">
+                              <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                          </div>
+                          <div class="subscribe-form">
+                              <form action="#">
+                                  <input type="text" placeholder="Email Address">
+                                  <button><i class="fab fa-telegram-plane subscribe-btn"></i></button>
+                              </form>
+                          </div>
+                      </div>
+          </footer>
+
+    <!-- end of footer -->
+    <script src="index.js"></script>
+  </body>
+</html>
